@@ -10,42 +10,48 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var items: [Dream]
+    
+    @State private var showingSheet = false
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        NavigationStack {
+            ZStack {
+                VStack() {
+                    List {
+                        ForEach(items, id: \.self) {
+                            item in
+                            NavigationLink {
+                                DreamView(dream: item)
+                            } label: {
+                                DreamListItem(dream: item)
+                            }
+                        }.onDelete(perform: deleteItems)
+                    }
+                    .background(.ultraThinMaterial)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            EditButton()
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                .navigationTitle("Your dreams")
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Add") {
+                            showingSheet.toggle()
+                        }
+                        .sheet(isPresented: $showingSheet) {
+                            NavigationStack {
+                                NewDreamForm().navigationTitle("New dream")
+                            }
+                        }
                     }
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
@@ -56,6 +62,8 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+    return ContentView()
+        .modelContainer(for: Dream.self, inMemory: true)
 }
+
+
