@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 final class Dream {
-    let uuid = UUID()
+    @Attribute(.unique) let uuid = UUID()
     
     var added: Date
     var dreamt: Date
@@ -22,8 +22,9 @@ final class Dream {
     var mood3: String
     
     var details: String
+    var interpretation: String
     
-    init(added: Date = Date(), dreamt: Date = Date(), isLucid: Bool = false, tone: String = "unclear", mood1: String = "neutral", mood2: String = "neutral", mood3: String = "neutral", details: String = "") {
+    init(added: Date = Date(), dreamt: Date = Date(), isLucid: Bool = false, tone: String = "unclear", mood1: String = "neutral", mood2: String = "neutral", mood3: String = "neutral", details: String = "", interpretation: String = "") {
             self.added = added
             self.dreamt = dreamt
             self.isLucid = isLucid
@@ -32,5 +33,6 @@ final class Dream {
             self.mood2 = mood2
             self.mood3 = mood3
             self.details = details
+            self.interpretation = interpretation
         }
 }

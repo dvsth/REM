@@ -15,39 +15,61 @@ struct ContentView: View {
     @State private var showingSheet = false
 
     var body: some View {
-        NavigationStack {
-            ZStack {
-                VStack() {
-                    List {
-                        ForEach(items, id: \.self) {
-                            item in
-                            NavigationLink {
-                                DreamView(dream: item)
-                            } label: {
-                                DreamListItem(dream: item)
+        TabView {
+            NavigationStack {
+                ZStack {
+                    VStack() {
+                        if items.isEmpty {
+                            ContentUnavailableView("No dreams yet", systemImage: "bubbles.and.sparkles", description: Text("To log your first dream, tap 'New' above"))
+                        }
+                        else {
+                            List {
+                                ForEach(items, id: \.self) {
+                                    item in
+                                    NavigationLink {
+                                        DreamView(dream: item)
+                                    } label: {
+                                        DreamListItem(dream: item)
+                                    }.contextMenu(ContextMenu(menuItems: {
+                                        Text("")
+                                    }))
+                                }.onDelete(perform: deleteItems)
                             }
-                        }.onDelete(perform: deleteItems)
+                            .background(.ultraThinMaterial)
+                            .toolbar {
+                                ToolbarItem(placement: .topBarLeading) {
+                                    EditButton()
+                                }
+                            }
+                        }
                     }
-                    .background(.ultraThinMaterial)
+                    .navigationTitle("Your dream log")
                     .toolbar {
-                        ToolbarItem(placement: .topBarLeading) {
-                            EditButton()
-                        }
-                    }
-                }
-                .navigationTitle("Your dreams")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Add") {
-                            showingSheet.toggle()
-                        }
-                        .sheet(isPresented: $showingSheet) {
-                            NavigationStack {
-                                NewDreamForm().navigationTitle("New dream")
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button {
+                                showingSheet.toggle()
+                            } label: {
+                                Image(systemName: "plus")
+                                Text("New")
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(.purple)
+                            .buttonBorderShape(.capsule)
+                            .sheet(isPresented: $showingSheet) {
+                                NavigationStack {
+                                    NewDreamForm().navigationTitle("New dream")
+                                }
                             }
                         }
                     }
                 }
+            }.tabItem {
+                Label("Log", systemImage: "book.pages")
+            }
+            NavigationStack {
+                
+            }.tabItem {
+                Label("Insights", systemImage: "timelapse")
             }
         }
     }

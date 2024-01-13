@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DreamView: View {
-    var dream: Dream
+    @Bindable var dream: Dream
     
     private var daysAgo: Int {
         let now = Date()
@@ -50,7 +50,8 @@ struct DreamView: View {
                     }
                 }
                 Section("Details you remembered") {
-                    Text(dream.details)
+                    TextField("Details you remembered", text: $dream.details, axis: .vertical)
+                        .lineLimit(7...)
                 }
             }
         }.navigationTitle("Dreamt \(daysAgo) \(daysAgo == 1 ? "day" : "days") ago")

@@ -89,10 +89,18 @@ struct NewDreamForm: View {
                     dismiss()
                 }
                 label : {
+                    Image(systemName: "pin.fill")
                     Text("Save")
                 }
-                .buttonStyle(.borderedProminent)
+                .tint(.purple)
+                .buttonStyle(.bordered)
                 .buttonBorderShape(.capsule)
+            }
+            ToolbarItemGroup(placement: .cancellationAction) {
+                Button("Cancel") {
+                    dismiss()
+                }
+                .tint(.purple)
             }
         }
     }
