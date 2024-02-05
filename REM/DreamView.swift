@@ -33,6 +33,13 @@ struct DreamView: View {
         return out
     }
     
+    private var shareString: String {
+        var out = "Sharing a \(dream.isLucid ? "lucid " : "")dream I recorded in my REM dream log...\n\n"
+        out = out + "\(dream.dreamt.formatted(date: .abbreviated, time: .omitted))\n"
+        out = out + "\(dream.details)"
+        return out
+    }
+    
     var body: some View {
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "ha"
@@ -52,6 +59,13 @@ struct DreamView: View {
                 Section("Your recollection") {
                     TextField("Details you remembered", text: $dream.details, axis: .vertical)
                         .lineLimit(7...)
+                }
+            }
+            .toolbar {
+                ToolbarItem {
+                    ShareLink(item: shareString, preview: SharePreview("Sharing dream text...", icon: "Logo.jpg")) {
+                        Label("Share", systemImage: "square.and.arrow.up")
+                    }
                 }
             }
         }.navigationTitle("Dreamt \(daysAgo) \(daysAgo == 1 ? "day" : "days") ago")

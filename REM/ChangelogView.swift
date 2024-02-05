@@ -20,7 +20,7 @@ struct ChangelogView: View {
             Section("Recently cooked") {
                 List {
                     ChangeLogItem(date: createDate(year: 2024, month: 2, day: 4), title: "OpenAI Whisper integration!", description: "Extremely accurate, instant transcription across languages, all on-device using whisper-tiny. Express yourself freely with support for proper nouns, technical jargon, and bilingual sentences (i.e. intrasentential code-switching).")
-                    ChangeLogItem(date: createDate(year: 2024, month: 2, day: 2), title: "Dream sharing", description: "Dream about something interesting? Share it with a friend using your texting app of choice!")
+                    ChangeLogItem(date: createDate(year: 2024, month: 2, day: 2), title: "Dream sharing", description: "Dream about something interesting? Share your recollection with a friend using your texting app of choice! Open any dream in your log and you will find a share button in the top right corner.")
                 }
             }
             Section("In the pipeline") {
