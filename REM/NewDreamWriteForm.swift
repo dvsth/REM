@@ -22,13 +22,6 @@ struct NewDreamWriteForm: View {
     @State private var wasLucid: Bool = false
     @State private var wasRecurring: Bool = false
     @State private var tone: String = "unclear"
-    @State private var audioFileUUID: UUID = UUID()
-    
-    private var audioFilePath: URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory.appendingPathComponent("\(audioFileUUID).m4a")
-    }
     
     @FocusState private var detailsFocused: Bool
     
@@ -76,7 +69,7 @@ struct NewDreamWriteForm: View {
 //                    }.pickerStyle(.segmented)
 //                }
 //            }
-            Section("Details") {
+            Section("Recollection") {
                 VStack(alignment: .leading)
                 {
                     Text("Perhaps ask yourself").font(.caption).bold()
@@ -93,11 +86,6 @@ struct NewDreamWriteForm: View {
                             }
                         }
                     }
-                RecordView(uuid: audioFileUUID)
-                TranscribeView(audioFilename: audioFilePath) {
-                    transcription in
-                    details = transcription
-                }
             }
         }
         .toolbar {

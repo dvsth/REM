@@ -9,7 +9,14 @@ import SwiftUI
 
 struct SplashView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("Logo.jpg")
+            .resizable()
+            .frame(width: 200, height: 200)
+            .padding()
+    }
+    
+    private func myFunc(text: String) -> Void {
+        
     }
 }
 

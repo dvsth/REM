@@ -49,7 +49,7 @@ struct DreamView: View {
                         Text(mood)
                     }
                 }
-                Section("Details you remembered") {
+                Section("Your recollection") {
                     TextField("Details you remembered", text: $dream.details, axis: .vertical)
                         .lineLimit(7...)
                 }

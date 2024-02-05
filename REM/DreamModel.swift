@@ -16,6 +16,7 @@ final class Dream {
     var dreamt: Date
     
     var isLucid: Bool
+    var isRecurring: Bool
     var tone: String
     var mood1: String
     var mood2: String
@@ -24,15 +25,19 @@ final class Dream {
     var details: String
     var interpretation: String
     
-    init(added: Date = Date(), dreamt: Date = Date(), isLucid: Bool = false, tone: String = "unclear", mood1: String = "neutral", mood2: String = "neutral", mood3: String = "neutral", details: String = "", interpretation: String = "") {
+    var audioFilePath: String
+    
+    init(added: Date = Date(), dreamt: Date = Date(), isLucid: Bool = false, isRecurring: Bool = false, tone: String = "unclear", mood1: String = "neutral", mood2: String = "neutral", mood3: String = "neutral", details: String = "", interpretation: String = "", audioFilePath: String = "") {
             self.added = added
             self.dreamt = dreamt
             self.isLucid = isLucid
+            self.isRecurring = isRecurring
             self.tone = tone
             self.mood1 = mood1
             self.mood2 = mood2
             self.mood3 = mood3
             self.details = details
             self.interpretation = interpretation
+            self.audioFilePath = audioFilePath
         }
 }

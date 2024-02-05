@@ -22,10 +22,28 @@ struct REMApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    @State private var animationSecondsLeft = -1.0
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if animationSecondsLeft > 0 {
+                    Text("Hello world")
+                }
+                else {
+                    ContentView()
+                }
+            }.onReceive(timer, perform: { _ in
+                if animationSecondsLeft < 0 {
+                    timer.upstream.connect().cancel()
+                }
+                else {
+                    animationSecondsLeft-=1
+                }
+            })
         }
         .modelContainer(sharedModelContainer)
     }

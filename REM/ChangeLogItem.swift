@@ -11,17 +11,30 @@ struct ChangeLogItem: View {
     var date: Date = Date.now
     var title: String = "Title"
     var description: String = "Desc"
-    var systemImage: String = "gear"
     
     var body: some View {
-        HStack {
-            
+        HStack(alignment: .top) {
+            VStack {
+                Text("\(date.formatted(.dateTime.month())) ".uppercased()).bold().font(.headline)
+                Text("\(date.formatted(.dateTime.day()))").bold().font(.title3)
+                    .foregroundStyle(.purple)
+                Spacer()
+            }
+            VStack(alignment: .leading) {
+                Text(title)
+                    .bold()
+                    .font(.headline)
+                Text(description)
+                    .font(.callout)
+            }
+            Spacer()
         }
-        .frame(height: 200)
-        .background(.ultraThinMaterial)
+        .padding([.top])
     }
 }
 
 #Preview {
-    ChangeLogItem()
+    List {
+        ChangeLogItem()
+    }
 }

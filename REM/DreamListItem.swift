@@ -16,7 +16,7 @@ struct DreamListItem: View {
                     Text("\(dream.dreamt.formatted(.dateTime.day()))").bold().font(.title3)
                     .foregroundStyle(.purple)
             }
-            Text("\(dream.details)...")
+            Text("\(dream.details)")
                 .font(.callout)
                 .lineLimit(3)
         }

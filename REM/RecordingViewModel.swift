@@ -2,41 +2,45 @@ import Foundation
 import AVFoundation
 
 class RecordingViewModel: ObservableObject {
+    var uuid: UUID
+    var audioFilePath: URL
+    
     @Published var audioRecorder: AVAudioRecorder?
     @Published var recording = false
     @Published var audioLevel: Float = 0.0
+    @Published var recordingStopped = false // Notify when recording stops
 
     private var recordingSession: AVAudioSession = AVAudioSession.sharedInstance()
     private var updateTimer: Timer?
-
-    func getAudioFilename(uuid: UUID) -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory.appendingPathComponent("\(uuid).m4a")
+    
+    
+    init(uuid: UUID) {
+        self.uuid = uuid
+        self.audioFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(self.uuid).m4a")
     }
     
-    func setupRecorder(uuid: UUID) {
-        let audioFilename = getAudioFilename(uuid: uuid)
+    func setupRecorder() {
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
-
+        
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: self.audioFilePath, settings: settings)
             audioRecorder?.isMeteringEnabled = true
         } catch {
             print("Failed to set up the audio recorder: \(error)")
         }
     }
     
-    func startRecording(uuid: UUID) {
+    func startRecording() {
         do {
+            recordingStopped = false // Reset the flag when recording starts
             try recordingSession.setCategory(.playAndRecord, mode: .default)
             try recordingSession.setActive(true)
-            setupRecorder(uuid: uuid) // Ensure the recorder is set up with the correct file
+            setupRecorder()
             audioRecorder?.record()
             recording = true
             audioRecorder?.isMeteringEnabled = true
@@ -51,14 +55,14 @@ class RecordingViewModel: ObservableObject {
         recording = false
         stopMetering()
         try? recordingSession.setActive(false)
+        recordingStopped = true // Set this flag when recording stops
     }
     
     private func startMetering() {
         updateTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
-            guard let strongSelf = self else { return }
-            strongSelf.audioRecorder?.updateMeters()
-            if let power = strongSelf.audioRecorder?.averagePower(forChannel: 0) {
-                strongSelf.audioLevel = strongSelf.convertPowerToLevel(power)
+            self?.audioRecorder?.updateMeters()
+            if let power = self?.audioRecorder?.averagePower(forChannel: 0) {
+                self?.audioLevel = self?.convertPowerToLevel(power) ?? 0.0
             }
         }
     }
@@ -75,8 +79,7 @@ class RecordingViewModel: ObservableObject {
         } else if power >= 1.0 {
             return 1.0
         } else {
-            let normalizedValue = (power + abs(minDb)) / abs(minDb)
-            return normalizedValue
+            return (power + abs(minDb)) / abs(minDb)
         }
     }
 }

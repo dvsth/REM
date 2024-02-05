@@ -10,7 +10,6 @@ import SwiftData
 
 struct DreamListView: View {
     
-    @State private var showingSheet = false
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Dream]
     
@@ -36,24 +35,6 @@ struct DreamListView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         EditButton()
-                    }
-                }
-            }
-        }
-        .navigationTitle("Your dream log")
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    showingSheet.toggle()
-                } label: {
-                    Image(systemName: "plus")
-                    Text("New")
-                }
-                .buttonStyle(.bordered)
-                .buttonBorderShape(.capsule)
-                .sheet(isPresented: $showingSheet) {
-                    NavigationStack {
-                        NewDreamForm().navigationTitle("New dream")
                     }
                 }
             }

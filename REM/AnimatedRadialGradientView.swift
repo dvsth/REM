@@ -10,21 +10,22 @@ import Foundation
 
 struct AnimatedRadialGradientView: View {
     
-    @State private var animY = 10.0
+    @State private var animY = -10.0
+    var extent: Double
     var center: UnitPoint
-    var animDuration: Double
+    var duration: Double
     var color1: Color
     var color2: Color
     
     var body: some View {
         RadialGradient(colors: [color1, color2], center: center, startRadius: 0, endRadius: animY)
-            .animation(.spring(duration: animDuration, bounce: 0.8), value: animY)
+            .animation(.spring(duration: duration, bounce: 0.8), value: animY)
             .onAppear {
-                animY = 150
+                animY = extent
             }
     }
 }
 
 #Preview {
-    AnimatedRadialGradientView(center: .bottomLeading, animDuration: 1.0, color1: .red, color2: .clear)
+    AnimatedRadialGradientView(extent: 150, center: .bottomLeading, duration: 1.0, color1: .red, color2: .clear)
 }

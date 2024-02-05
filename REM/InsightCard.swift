@@ -13,17 +13,17 @@ struct InsightCard: View {
     var topText: String = "Arbitrary metric"
     var heroText: String = "34%"
     var bottomText: String = "of all entries"
-    var highlightColor: Color = .purple
+    var highlightColors: [Color] = [.indigo, .pink, .pink, .purple]
     
     @State private var gradient = 0.0
     
     var body: some View {
         ZStack {
             Color.white
-            AnimatedRadialGradientView(center: .topLeading, animDuration: 1, color1: .indigo, color2: .clear)
-            AnimatedRadialGradientView(center: .topTrailing, animDuration: 2, color1: .pink, color2: .clear)
-            AnimatedRadialGradientView(center: .bottom, animDuration: 1.5, color1: .pink, color2: .clear)
-            AnimatedRadialGradientView(center: .bottomTrailing, animDuration: 2, color1: .purple, color2: .clear)
+            AnimatedRadialGradientView(extent: 150, center: .topLeading, duration: 6, color1: highlightColors[0], color2: .clear)
+            AnimatedRadialGradientView(extent: 150, center: .topTrailing, duration: 4, color1: highlightColors[1], color2: .clear)
+            AnimatedRadialGradientView(extent: 150, center: .bottomLeading, duration: 10, color1: highlightColors[2], color2: .clear)
+            AnimatedRadialGradientView(extent: 150, center: .bottomTrailing, duration: 8, color1: highlightColors[3], color2: .clear)
             VStack {
                 Spacer()
                 Text(topText.uppercased())
@@ -39,7 +39,7 @@ struct InsightCard: View {
                 Spacer()
                 Text(bottomText)
                     .font(.callout)
-                    .foregroundStyle(.thinMaterial)
+                    .foregroundStyle(.ultraThickMaterial)
                 Spacer()
             }
             .padding(10)
@@ -48,10 +48,8 @@ struct InsightCard: View {
             .aspectRatio(1, contentMode: .fit)
             .clipShape(.rect(cornerRadius: 25))
         }
-        .frame(minWidth: 200, maxWidth: 200, minHeight: 200, maxHeight: 200)
+        .frame(minWidth: 200, maxWidth: 200, minHeight: 200, maxHeight: 200, alignment: .leading)
         .clipShape(.rect(cornerRadius: 25))
-        
-        
         
     }
 }

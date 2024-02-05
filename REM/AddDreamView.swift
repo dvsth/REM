@@ -8,9 +8,30 @@
 import SwiftUI
 
 struct AddDreamView: View {
+    
+    @State private var showingSheet = false
+    @State private var path: [String] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $path) {
+            HStack {
+//                MelangeButton(text: "Write", systemName: "keyboard.fill", mainColor: .yellow, accentColor: .orange, action: {path.append("NewDreamWriteForm")})
+                MelangeButton(text: "New dream", systemName: "moon.zzz.fill", mainColor: .indigo, accentColor: .purple, action: {path.append("NewDreamTranscribeForm")})
+            }.navigationDestination(for: String.self) {
+                identifier in
+                if identifier == "NewDreamWriteForm" {
+                    NewDreamWriteForm(path: $path)
+                        .navigationTitle("New dream")
+                }
+                else {
+                    NewDreamRecordForm(path: $path)
+                        .navigationTitle("New dream")
+                }
+            }
+        }
+        .padding(.horizontal)
     }
+
 }
 
 #Preview {

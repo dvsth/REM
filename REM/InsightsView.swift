@@ -20,16 +20,33 @@ struct InsightsView: View {
     @Query private var dreams: [Dream]
     
     var body: some View {
-        VStack {
-            if dreams.isEmpty {
-                ContentUnavailableView("Insights coming soon!", systemImage: "timelapse", description: Text("Check back in a future version for analysis of dream patterns, themes, and emotions"))
-            }
-            else {
-                NavigationStack {
-                    
-                }
-            }
+        
+        if dreams.isEmpty {
+            ContentUnavailableView("No insights yet", systemImage: "timelapse", description: Text("Start by adding a dream to your dream log"))
         }
+        else {
+            VStack(alignment: .leading) {
+                ScrollView(.horizontal) {
+                    Grid(horizontalSpacing: 15, verticalSpacing: 15) {
+                        GridRow {
+                            TotalCountView()
+                            LucidView()
+                        }
+                        GridRow {
+                            InsightCard(
+                                topText: "Coming soon",
+                                heroText: "🔮",
+                                bottomText: "DreamGPT: AI dream interpretation by REM",
+                                highlightColors: [.yellow, .yellow, .orange, .yellow])
+                        }
+                    }
+                }
+                .scrollIndicators(.hidden)
+                .padding(.leading)
+            }.padding(.top)
+            Spacer()
+        }
+            
     }
 }
 

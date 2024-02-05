@@ -12,22 +12,64 @@
 		104355F82B4D90AA0069DDBF /* DreamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104355F72B4D90AA0069DDBF /* DreamModel.swift */; };
 		104355FA2B4D90AB0069DDBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104355F92B4D90AB0069DDBF /* Assets.xcassets */; };
 		104355FD2B4D90AB0069DDBF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104355FC2B4D90AB0069DDBF /* Preview Assets.xcassets */; };
-		104356062B4D95030069DDBF /* NewDreamForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104356052B4D95030069DDBF /* NewDreamForm.swift */; };
+		104356062B4D95030069DDBF /* NewDreamWriteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104356052B4D95030069DDBF /* NewDreamWriteForm.swift */; };
 		104356082B4DBDB20069DDBF /* DreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104356072B4DBDB20069DDBF /* DreamView.swift */; };
 		1043560A2B4DD28F0069DDBF /* DreamListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104356092B4DD28F0069DDBF /* DreamListItem.swift */; };
+		108993FB2B57F24200A861EC /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108993FA2B57F24200A861EC /* RecordView.swift */; };
+		10913BCB2B52D1D10070C7EF /* DreamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10913BCA2B52D1D10070C7EF /* DreamListView.swift */; };
+		10913BCD2B52DB2E0070C7EF /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10913BCC2B52DB2E0070C7EF /* InsightsView.swift */; };
+		10913BCF2B52E4120070C7EF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10913BCE2B52E4120070C7EF /* SplashView.swift */; };
+		10913BD32B52E5A20070C7EF /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10913BD22B52E5A20070C7EF /* Logo.jpg */; };
+		10913BDA2B5435940070C7EF /* InsightCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10913BD92B5435940070C7EF /* InsightCard.swift */; };
+		10913BDC2B54412B0070C7EF /* LucidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10913BDB2B54412B0070C7EF /* LucidView.swift */; };
+		10913BDE2B5448CF0070C7EF /* AnimatedRadialGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10913BDD2B5448CF0070C7EF /* AnimatedRadialGradientView.swift */; };
+		10913BE02B5453110070C7EF /* TotalCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10913BDF2B5453110070C7EF /* TotalCountView.swift */; };
+		10913BE42B5464E90070C7EF /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10913BE32B5464E90070C7EF /* AboutView.swift */; };
+		109E44392B58261300073630 /* TranscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E44382B58261300073630 /* TranscribeView.swift */; };
+		109E443B2B582BBA00073630 /* MelangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E443A2B582BBA00073630 /* MelangeButton.swift */; };
+		109E443D2B583AE200073630 /* AddDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E443C2B583AE200073630 /* AddDreamView.swift */; };
+		109E443F2B5855BC00073630 /* NewDreamRecordForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E443E2B5855BC00073630 /* NewDreamRecordForm.swift */; };
+		10B1E6862B5F11ED006E0517 /* ChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E6852B5F11ED006E0517 /* ChangelogView.swift */; };
+		10B1E6882B5F2222006E0517 /* ChangeLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E6872B5F2222006E0517 /* ChangeLogItem.swift */; };
+		10DC72B62B708A0500B392FB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC72B52B708A0500B392FB /* Utilities.swift */; };
+		10DC72B82B7090F000B392FB /* AudioLevelMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC72B72B7090F000B392FB /* AudioLevelMeterView.swift */; };
+		10DC72BA2B70918900B392FB /* RecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC72B92B70918900B392FB /* RecordingViewModel.swift */; };
+		10F3A1D32B704ADB006FCC49 /* TranscribeWhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F3A1D22B704ADB006FCC49 /* TranscribeWhisperView.swift */; };
+		10F3A1D62B704D24006FCC49 /* WhisperKit in Frameworks */ = {isa = PBXBuildFile; productRef = 10F3A1D52B704D24006FCC49 /* WhisperKit */; };
+		10F3A1D82B704D24006FCC49 /* transcribe in Frameworks */ = {isa = PBXBuildFile; productRef = 10F3A1D72B704D24006FCC49 /* transcribe */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		104355F02B4D90AA0069DDBF /* REM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REM.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		104355F32B4D90AA0069DDBF /* REMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REMApp.swift; sourceTree = "<group>"; };
-		104355F52B4D90AA0069DDBF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		104355F72B4D90AA0069DDBF /* DreamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamModel.swift; sourceTree = "<group>"; };
-		104355F92B4D90AB0069DDBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		104355FC2B4D90AB0069DDBF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		104355FF2B4D90AB0069DDBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		104356052B4D95030069DDBF /* NewDreamForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDreamForm.swift; sourceTree = "<group>"; };
-		104356072B4DBDB20069DDBF /* DreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamView.swift; sourceTree = "<group>"; };
-		104356092B4DD28F0069DDBF /* DreamListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamListItem.swift; sourceTree = "<group>"; };
+		104355F32B4D90AA0069DDBF /* REMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = REMApp.swift; path = REM/REMApp.swift; sourceTree = SOURCE_ROOT; };
+		104355F52B4D90AA0069DDBF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = REM/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		104355F72B4D90AA0069DDBF /* DreamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DreamModel.swift; path = REM/DreamModel.swift; sourceTree = SOURCE_ROOT; };
+		104355F92B4D90AB0069DDBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = REM/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		104355FC2B4D90AB0069DDBF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Preview Assets.xcassets"; path = "REM/Preview Content/Preview Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		104355FF2B4D90AB0069DDBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = REM/Info.plist; sourceTree = SOURCE_ROOT; };
+		104356052B4D95030069DDBF /* NewDreamWriteForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewDreamWriteForm.swift; path = REM/NewDreamWriteForm.swift; sourceTree = SOURCE_ROOT; };
+		104356072B4DBDB20069DDBF /* DreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DreamView.swift; path = REM/DreamView.swift; sourceTree = SOURCE_ROOT; };
+		104356092B4DD28F0069DDBF /* DreamListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DreamListItem.swift; path = REM/DreamListItem.swift; sourceTree = SOURCE_ROOT; };
+		108993FA2B57F24200A861EC /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		10913BCA2B52D1D10070C7EF /* DreamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DreamListView.swift; path = REM/DreamListView.swift; sourceTree = SOURCE_ROOT; };
+		10913BCC2B52DB2E0070C7EF /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InsightsView.swift; path = REM/InsightsView.swift; sourceTree = SOURCE_ROOT; };
+		10913BCE2B52E4120070C7EF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashView.swift; path = REM/SplashView.swift; sourceTree = SOURCE_ROOT; };
+		10913BD22B52E5A20070C7EF /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Logo.jpg; path = REM/Logo.jpg; sourceTree = SOURCE_ROOT; };
+		10913BD92B5435940070C7EF /* InsightCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InsightCard.swift; path = REM/InsightCard.swift; sourceTree = SOURCE_ROOT; };
+		10913BDB2B54412B0070C7EF /* LucidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LucidView.swift; path = REM/LucidView.swift; sourceTree = SOURCE_ROOT; };
+		10913BDD2B5448CF0070C7EF /* AnimatedRadialGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimatedRadialGradientView.swift; path = REM/AnimatedRadialGradientView.swift; sourceTree = SOURCE_ROOT; };
+		10913BDF2B5453110070C7EF /* TotalCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TotalCountView.swift; path = REM/TotalCountView.swift; sourceTree = SOURCE_ROOT; };
+		10913BE32B5464E90070C7EF /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		109E44382B58261300073630 /* TranscribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscribeView.swift; sourceTree = "<group>"; };
+		109E443A2B582BBA00073630 /* MelangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelangeButton.swift; sourceTree = "<group>"; };
+		109E443C2B583AE200073630 /* AddDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDreamView.swift; sourceTree = "<group>"; };
+		109E443E2B5855BC00073630 /* NewDreamRecordForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDreamRecordForm.swift; sourceTree = "<group>"; };
+		10B1E6852B5F11ED006E0517 /* ChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogView.swift; sourceTree = "<group>"; };
+		10B1E6872B5F2222006E0517 /* ChangeLogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogItem.swift; sourceTree = "<group>"; };
+		10DC72B52B708A0500B392FB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		10DC72B72B7090F000B392FB /* AudioLevelMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioLevelMeterView.swift; sourceTree = "<group>"; };
+		10DC72B92B70918900B392FB /* RecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModel.swift; sourceTree = "<group>"; };
+		10F3A1D22B704ADB006FCC49 /* TranscribeWhisperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscribeWhisperView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F3A1D62B704D24006FCC49 /* WhisperKit in Frameworks */,
+				10F3A1D82B704D24006FCC49 /* transcribe in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,26 +104,65 @@
 		104355F22B4D90AA0069DDBF /* REM */ = {
 			isa = PBXGroup;
 			children = (
+				10DC72B92B70918900B392FB /* RecordingViewModel.swift */,
+				10B1E6852B5F11ED006E0517 /* ChangelogView.swift */,
+				10DC72B52B708A0500B392FB /* Utilities.swift */,
+				10B1E6872B5F2222006E0517 /* ChangeLogItem.swift */,
 				104355F32B4D90AA0069DDBF /* REMApp.swift */,
+				10913BCE2B52E4120070C7EF /* SplashView.swift */,
 				104355F52B4D90AA0069DDBF /* ContentView.swift */,
+				109E443C2B583AE200073630 /* AddDreamView.swift */,
+				109E443A2B582BBA00073630 /* MelangeButton.swift */,
+				10913BCA2B52D1D10070C7EF /* DreamListView.swift */,
 				104356092B4DD28F0069DDBF /* DreamListItem.swift */,
-				104356052B4D95030069DDBF /* NewDreamForm.swift */,
+				104356072B4DBDB20069DDBF /* DreamView.swift */,
+				104356052B4D95030069DDBF /* NewDreamWriteForm.swift */,
+				109E443E2B5855BC00073630 /* NewDreamRecordForm.swift */,
+				10913BCC2B52DB2E0070C7EF /* InsightsView.swift */,
+				10913BE32B5464E90070C7EF /* AboutView.swift */,
+				10913BDB2B54412B0070C7EF /* LucidView.swift */,
+				10913BDF2B5453110070C7EF /* TotalCountView.swift */,
+				10913BD92B5435940070C7EF /* InsightCard.swift */,
+				108993FA2B57F24200A861EC /* RecordView.swift */,
+				10DC72B72B7090F000B392FB /* AudioLevelMeterView.swift */,
+				109E44382B58261300073630 /* TranscribeView.swift */,
+				10F3A1D22B704ADB006FCC49 /* TranscribeWhisperView.swift */,
+				10913BDD2B5448CF0070C7EF /* AnimatedRadialGradientView.swift */,
 				104355F72B4D90AA0069DDBF /* DreamModel.swift */,
+				10913BE22B5453400070C7EF /* DreamListTab */,
+				10913BE12B54531B0070C7EF /* InsightsTab */,
 				104355F92B4D90AB0069DDBF /* Assets.xcassets */,
 				104355FF2B4D90AB0069DDBF /* Info.plist */,
 				104355FB2B4D90AB0069DDBF /* Preview Content */,
-				104356072B4DBDB20069DDBF /* DreamView.swift */,
+				10913BD22B52E5A20070C7EF /* Logo.jpg */,
 			);
 			path = REM;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		104355FB2B4D90AB0069DDBF /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
 				104355FC2B4D90AB0069DDBF /* Preview Assets.xcassets */,
 			);
-			path = "Preview Content";
-			sourceTree = "<group>";
+			name = "Preview Content";
+			path = "REM/Preview Content";
+			sourceTree = SOURCE_ROOT;
+		};
+		10913BE12B54531B0070C7EF /* InsightsTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = InsightsTab;
+			path = REM/InsightsTab;
+			sourceTree = SOURCE_ROOT;
+		};
+		10913BE22B5453400070C7EF /* DreamListTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DreamListTab;
+			path = REM/DreamListTab;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -97,6 +180,10 @@
 			dependencies = (
 			);
 			name = REM;
+			packageProductDependencies = (
+				10F3A1D52B704D24006FCC49 /* WhisperKit */,
+				10F3A1D72B704D24006FCC49 /* transcribe */,
+			);
 			productName = REM;
 			productReference = 104355F02B4D90AA0069DDBF /* REM.app */;
 			productType = "com.apple.product-type.application";
@@ -125,6 +212,9 @@
 				Base,
 			);
 			mainGroup = 104355E72B4D90AA0069DDBF;
+			packageReferences = (
+				10F3A1D42B704D24006FCC49 /* XCRemoteSwiftPackageReference "whisperkit" */,
+			);
 			productRefGroup = 104355F12B4D90AA0069DDBF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				104355FD2B4D90AB0069DDBF /* Preview Assets.xcassets in Resources */,
+				10913BD32B52E5A20070C7EF /* Logo.jpg in Resources */,
 				104355FA2B4D90AB0069DDBF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,12 +242,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10913BDE2B5448CF0070C7EF /* AnimatedRadialGradientView.swift in Sources */,
+				109E443B2B582BBA00073630 /* MelangeButton.swift in Sources */,
 				104356082B4DBDB20069DDBF /* DreamView.swift in Sources */,
-				104356062B4D95030069DDBF /* NewDreamForm.swift in Sources */,
+				10913BCD2B52DB2E0070C7EF /* InsightsView.swift in Sources */,
+				10913BCB2B52D1D10070C7EF /* DreamListView.swift in Sources */,
+				10913BE42B5464E90070C7EF /* AboutView.swift in Sources */,
+				108993FB2B57F24200A861EC /* RecordView.swift in Sources */,
+				10DC72BA2B70918900B392FB /* RecordingViewModel.swift in Sources */,
+				10913BDA2B5435940070C7EF /* InsightCard.swift in Sources */,
+				109E44392B58261300073630 /* TranscribeView.swift in Sources */,
+				104356062B4D95030069DDBF /* NewDreamWriteForm.swift in Sources */,
 				1043560A2B4DD28F0069DDBF /* DreamListItem.swift in Sources */,
+				10913BE02B5453110070C7EF /* TotalCountView.swift in Sources */,
+				10DC72B62B708A0500B392FB /* Utilities.swift in Sources */,
+				10913BDC2B54412B0070C7EF /* LucidView.swift in Sources */,
+				10B1E6862B5F11ED006E0517 /* ChangelogView.swift in Sources */,
+				109E443F2B5855BC00073630 /* NewDreamRecordForm.swift in Sources */,
 				104355F62B4D90AA0069DDBF /* ContentView.swift in Sources */,
+				10F3A1D32B704ADB006FCC49 /* TranscribeWhisperView.swift in Sources */,
+				109E443D2B583AE200073630 /* AddDreamView.swift in Sources */,
 				104355F82B4D90AA0069DDBF /* DreamModel.swift in Sources */,
 				104355F42B4D90AA0069DDBF /* REMApp.swift in Sources */,
+				10B1E6882B5F2222006E0517 /* ChangeLogItem.swift in Sources */,
+				10DC72B82B7090F000B392FB /* AudioLevelMeterView.swift in Sources */,
+				10913BCF2B52E4120070C7EF /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +279,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon 1";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -234,6 +345,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon 1";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -306,11 +418,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.13;
 				PRODUCT_BUNDLE_IDENTIFIER = sethco.rapideyemovement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -339,11 +452,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.13;
 				PRODUCT_BUNDLE_IDENTIFIER = sethco.rapideyemovement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -374,6 +488,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10F3A1D42B704D24006FCC49 /* XCRemoteSwiftPackageReference "whisperkit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/argmaxinc/whisperkit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10F3A1D52B704D24006FCC49 /* WhisperKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10F3A1D42B704D24006FCC49 /* XCRemoteSwiftPackageReference "whisperkit" */;
+			productName = WhisperKit;
+		};
+		10F3A1D72B704D24006FCC49 /* transcribe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10F3A1D42B704D24006FCC49 /* XCRemoteSwiftPackageReference "whisperkit" */;
+			productName = transcribe;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 104355E82B4D90AA0069DDBF /* Project object */;
 }
