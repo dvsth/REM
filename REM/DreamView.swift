@@ -23,9 +23,9 @@ struct DreamView: View {
     }
     
     private var characteristicsString: String {
-        var out = "This \(dream.isLucid ? "lucid " : "")dream felt "
+        var out = "This \(dream.isLucid ? "**lucid** " : "")dream felt "
         if dream.tone != "unclear" {
-            out.append("like a \(dream.tone).")
+            out.append("like a **\(dream.tone)**.")
         }
         else {
             out.append("unclear.")
@@ -41,7 +41,7 @@ struct DreamView: View {
         return VStack {
             List {
                 Section("Dream characteristics") {
-                    Text("You had this dream around \(dateformatter.string(from: dream.dreamt).lowercased()) on \(dream.dreamt.formatted(date: .abbreviated, time: .omitted)). \(characteristicsString)")
+                    Text(.init("You had this dream around \(dateformatter.string(from: dream.dreamt).lowercased()) on \(dream.dreamt.formatted(date: .abbreviated, time: .omitted)). \(characteristicsString)"))
                 }
                 Section("How you felt") {
                     ForEach([dream.mood1, dream.mood2, dream.mood3], id: \.self) {

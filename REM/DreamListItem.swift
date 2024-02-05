@@ -10,19 +10,14 @@ import SwiftUI
 struct DreamListItem: View {
     var dream: Dream
     var body: some View {
-        HStack(alignment:.center, spacing: 20) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .fill(LinearGradient(colors: [.white, .gray], startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .aspectRatio(1, contentMode: .fit)
-                    .frame(width: 75, height: 75)
-                VStack(spacing:-3) {
-                    Text("\(dream.dreamt.formatted(.dateTime.month()))").bold().font(.title3)
-                    Text("\(dream.dreamt.formatted(.dateTime.day()))").bold().font(.largeTitle)
-                }
+        HStack(alignment:.center, spacing: 15) {
+            VStack(spacing:0) {
+                    Text("\(dream.dreamt.formatted(.dateTime.month())) ".uppercased()).bold().font(.title3)
+                    Text("\(dream.dreamt.formatted(.dateTime.day()))").bold().font(.title3)
+                    .foregroundStyle(.purple)
             }
             Text("\(dream.details)...")
-                .font(.headline)
+                .font(.callout)
                 .lineLimit(3)
         }
     }
